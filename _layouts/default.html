@@ -36,12 +36,12 @@
             transition: background-color 0.3s;
             padding: 5px 10px; 
             border-radius: 5px; 
+            font-style: italic; 
         }
         nav a:hover {
             background-color: #add8e6; 
         }
-        /* Added padding to the body for left and right sides of the content */
-        body {
+        .content-container {
             padding-left: 10px;
             padding-right: 10px;
         }
@@ -59,6 +59,8 @@
             </ul>
         </nav>
     </header>
-    {{ content }}
+    <div class="content-container">
+        {{ content }}
+    </div>
 </body>
 </html>
