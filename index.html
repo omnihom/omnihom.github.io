@@ -1,6 +1,50 @@
 ---
 layout: default
-title: Home Page
+title: Pagin prinsipal
 ---
 
-<p>Welcome to my homepage!</p>
+<head>
+    <meta charset="utf-8">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            font-family: Palatino, Palatino Linotype, serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Adjust alignment as needed */
+            padding: 50px 20px;
+        }
+        .column {
+            width: calc(50% - 5px); /* Adjust the width as needed */
+            text-align: left; /* Align text left */
+        }
+        .column h2 {
+            margin-top: 0;
+            text-align: center; /* Center titles */
+        }
+        .left-column {
+            color: navy;
+        }
+        .right-column {
+            color: maroon;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column left-column">
+            <h2>Left Column Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat malesuada libero, id gravida ipsum efficitur a. Donec rhoncus felis vel luctus tempor.</p>
+        </div>
+        <div class="column right-column">
+            <h2>Right Column Title</h2>
+            <p>Ut fermentum nisl ac venenatis lacinia. Mauris sit amet est sit amet libero dictum scelerisque nec a metus. Cras sollicitudin magna vel magna lacinia, non sollicitudin magna tincidunt.</p>
+        </div>
+    </div>
+</body>
+
+
