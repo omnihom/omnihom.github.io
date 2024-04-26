@@ -3,6 +3,8 @@ layout: default
 title: Pagin prinsipal
 ---
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Neutralia</title>
@@ -12,66 +14,63 @@ title: Pagin prinsipal
             margin: 0;
             padding: 0;
         }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start; /* Adjust alignment as needed */
-            padding: 50px 20px; /* Adjust padding to create space */
-            max-width: 1000px; /* Set maximum width of the container */
-            margin: 0 auto; /* Center the container */
+
+        .text-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            text-align: left; 
+            color: navy; 
+            font-size: 18px; 
+            line-height: 1.5; 
         }
-        .column {
-            width: calc(50% - 5%); /* Adjust the width as needed */
-            text-align: left; /* Align text left */
+
+        .text-container.neutral-language {
+            color: maroon; 
         }
-        .column h2 {
-            margin-top: 0;
-            text-align: center; /* Center titles */
+
+        .switch-button {
+            background-color: rgba(0, 123, 255, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-family: Palatino, Palatino Linotype, serif;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
         }
-        .column p {
-            line-height: 1.3; /* Adjust line spacing */
+
+        .switch-button:hover {
+            background-color: rgba(0, 123, 255, 0.8);
         }
-        .left-column {
-            color: navy;
-        }
-        .right-column {
-            color: maroon;
+
+        .button-container {
+            text-align: center; 
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="column left-column">
-            <h2>Velkom!</h2>
-            <p>
-            Esa velkomed in ist lok internetik di Idiom Neutral, lingu auksiliar internasional, kel esav publiked in anu 1902 per <i>Akademi Internasional de Lingu Universal</i> sub direktorad de Waldemar Rosenberger, injenier da Rusia.<br><br>
+    <div class="text-container language-switch" data-neutral="Esa velkomed in ist lok internetik di Idiom Neutral, lingu auksiliar internasional, kel esav publiked in anu 1902 per <i>Akademi Internasional de Lingu Universal</i> sub direktorad de Waldemar Rosenberger, injenier da Rusia.<br><br>On potes truvar siloke:<ul><li>Gramatik e diksionar de Idiom Neutral (1902)</li><li>Suplement a diksionar (1906)<li>Letri historik skribed in Idiom Neutral (1904-1911)</li><li>Transkribasioni de reviu <i>Progres</i> (1906-1908)</li><li>Informasion di Reform-Neutral, proyekt reformasionik posterior de lingu (1912)</li></ul>" data-english="Welcome to this website about Idiom Neutral, an international auxiliary language made public in 1902 by the <i>International Academy of the Universal Language</i> under the directorship of Waldemar Rosenberger, an engineer from Russia.<br><br>One can find here:<ul><li>A grammar and dictionary of Idiom Neutral (1902)</li><li>Supplement to the dictionary (1906)</li><li>Historical letters written in Idiom Neutral (1904-1911)</li><li>Transcriptions of the journal <i>Progres</i> (1906-1908)</li><li>Information about Reform-Neutral, a later reform project of the language (1912)</li></ul>">Esa velkomed in ist lok internetik di Idiom Neutral, lingu auksiliar internasional, kel esav publiked in anu 1902 per <i>Akademi Internasional de Lingu Universal</i> sub direktorad de Waldemar Rosenberger, injenier da Rusia.<br><br>On potes truvar siloke:<ul><li>Gramatik e diksionar de Idiom Neutral (1902)</li><li>Suplement a diksionar (1906)<li>Letri historik skribed in Idiom Neutral (1904-1911)</li><li>Transkribasioni de reviu <i>Progres</i> (1906-1908)</li><li>Informasion di Reform-Neutral, proyekt reformasionik posterior de lingu (1912)</li></ul></div>
 
-            On potes truvar siloke:
-
-                 <ul>
-                      <li>Gramatik e diksionar de Idiom Neutral (1902)</li>
-                     <li>Suplement a diksionar (1906)
-                      <li>Letri historik skribed in Idiom Neutral (1904-1911)</li>
-                      <li>Transkribasioni de reviu <i>Progres</i> (1906-1908)</li>
-                     <li>Informasion di Reform-Neutral, proyekt reformasionik posterior de lingu (1912)</li>
-                </ul> 
-                
-            </p>
-        </div>
-        <div class="column right-column">
-            <h2>Welcome!</h2>
-            <p>
-            Welcome to this website about Idiom Neutral, an international auxiliary language made public in 1902 by the <i>International Academy of the Universal Language</i> under the directorship of Waldemar Rosenberger, an engineer from Russia.<br><br>
-
-                One can find here:
-                <ul>
-                    <li>A grammar and dictionary of Idiom Neutral (1902)</li>
-                    <li>Supplement to the dictionary (1906)</li>
-                    <li>Historical letters written in Idiom Neutral (1904-1911)</li>
-                    <li>Transcriptions of the journal <i>Progres</i> (1906-1908)</li>
-                    <li>Information about Reform-Neutral, a later reform project of the language (1912)</li>
-                </ul>
-                </p>
-        </div>
+    <div class="button-container">
+        <button class="switch-button" onclick="switchLanguage('neutral')">Idiom Neutral</button>
+        <button class="switch-button" onclick="switchLanguage('english')">English</button>
     </div>
+
+    <script>
+        function switchLanguage(language) {
+            var element = document.querySelector('.language-switch');
+            if (language === 'english') {
+                element.innerHTML = element.getAttribute('data-english');
+                element.classList.remove('neutral-language'); 
+            } else if (language === 'neutral') {
+                element.innerHTML = element.getAttribute('data-neutral');
+                element.classList.add('neutral-language'); 
+            }
+        }
+    </script>
 </body>
+</html>
