@@ -21,14 +21,14 @@ title: Pagin prinsipal
             padding: 20px;
             border-radius: 5px;
             background-color: #f9f9f9;
-            text-align: left; 
-            color: navy; 
-            font-size: 18px; 
-            line-height: 1.5; 
+            text-align: left; /* Left-align the text */
+            color: maroon; /* Default text color (Neutral language) */
+            font-size: 18px; /* Adjust font size */
+            line-height: 1.5; /* Adjust line height */
         }
 
-        .text-container.neutral-language {
-            color: maroon; 
+        .text-container.english-language {
+            color: navy; /* Text color for English language */
         }
 
         .switch-button {
@@ -48,7 +48,7 @@ title: Pagin prinsipal
         }
 
         .button-container {
-            text-align: center; 
+            text-align: center; /* Center-align the button container */
         }
     </style>
 </head>
@@ -56,8 +56,8 @@ title: Pagin prinsipal
     <div class="text-container language-switch" data-neutral="Esa velkomed in ist lok internetik di Idiom Neutral, lingu auksiliar internasional, kel esav publiked in anu 1902 per <i>Akademi Internasional de Lingu Universal</i> sub direktorad de Waldemar Rosenberger, injenier da Rusia.<br><br>On potes truvar siloke:<ul><li>Gramatik e diksionar de Idiom Neutral (1902)</li><li>Suplement a diksionar (1906)<li>Letri historik skribed in Idiom Neutral (1904-1911)</li><li>Transkribasioni de reviu <i>Progres</i> (1906-1908)</li><li>Informasion di Reform-Neutral, proyekt reformasionik posterior de lingu (1912)</li></ul>" data-english="Welcome to this website about Idiom Neutral, an international auxiliary language made public in 1902 by the <i>International Academy of the Universal Language</i> under the directorship of Waldemar Rosenberger, an engineer from Russia.<br><br>One can find here:<ul><li>A grammar and dictionary of Idiom Neutral (1902)</li><li>Supplement to the dictionary (1906)</li><li>Historical letters written in Idiom Neutral (1904-1911)</li><li>Transcriptions of the journal <i>Progres</i> (1906-1908)</li><li>Information about Reform-Neutral, a later reform project of the language (1912)</li></ul>">Esa velkomed in ist lok internetik di Idiom Neutral, lingu auksiliar internasional, kel esav publiked in anu 1902 per <i>Akademi Internasional de Lingu Universal</i> sub direktorad de Waldemar Rosenberger, injenier da Rusia.<br><br>On potes truvar siloke:<ul><li>Gramatik e diksionar de Idiom Neutral (1902)</li><li>Suplement a diksionar (1906)<li>Letri historik skribed in Idiom Neutral (1904-1911)</li><li>Transkribasioni de reviu <i>Progres</i> (1906-1908)</li><li>Informasion di Reform-Neutral, proyekt reformasionik posterior de lingu (1912)</li></ul></div>
 
     <div class="button-container">
-        <button class="switch-button" onclick="switchLanguage('neutral')">Idiom Neutral</button>
         <button class="switch-button" onclick="switchLanguage('english')">English</button>
+        <button class="switch-button" onclick="switchLanguage('neutral')">Idiom Neutral</button>
     </div>
 
     <script>
@@ -65,10 +65,10 @@ title: Pagin prinsipal
             var element = document.querySelector('.language-switch');
             if (language === 'english') {
                 element.innerHTML = element.getAttribute('data-english');
-                element.classList.remove('neutral-language'); 
+                element.classList.add('english-language'); /* Add english-language class */
             } else if (language === 'neutral') {
                 element.innerHTML = element.getAttribute('data-neutral');
-                element.classList.add('neutral-language'); 
+                element.classList.remove('english-language'); /* Remove english-language class */
             }
         }
     </script>
